@@ -36,7 +36,7 @@ Will output:
 
 > balance: {
   "address": "1CZGSZPGsyeeLYyoXdmJtanEmaKKpwYM7g",
-  "amount": 5670.8099999999995,
+  "amount": 5670.801,
   "curr": "bits(uBTC)"
 }
 
