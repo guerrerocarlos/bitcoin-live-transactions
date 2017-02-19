@@ -34,7 +34,8 @@ bitcoin.getBalance('1CZGSZPGsyeeLYyoXdmJtanEmaKKpwYM7g').then(function(balance) 
 
 Will output:
 
-> balance: {
+```javascript 
+balance: {
   "address": "1BkJgdopq35eaZGRrau4wdnZFZ3qfM4DUb",
   "in": 3018.02,
   "out": 3018.02,
@@ -42,8 +43,9 @@ Will output:
   "balance": 0,
   "txs": 2
 }
+```
 
 That can be checked here:
-[https://insight.bitpay.com/address/1BkJgdopq35eaZGRrau4wdnZFZ3qfM4DUb](https://insight.bitpay.com/address/1BkJgdopq35eaZGRrau4wdnZFZ3qfM4DUb)
+[https://insight.bitpay.com/address/1CZGSZPGsyeeLYyoXdmJtanEmaKKpwYM7g](https://insight.bitpay.com/address/1CZGSZPGsyeeLYyoXdmJtanEmaKKpwYM7g)
 
 To get all the detailed information about an address, use **bitcoin.getTxs** instead of **bitcoin.getBalance**
