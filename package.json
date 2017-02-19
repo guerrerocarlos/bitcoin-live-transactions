@@ -1,6 +1,6 @@
 {
   "name": "bitcoin-live-transactions",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Get all bitcoin transactions real time over socket.io from insight servers online",
   "main": "index.js",
   "repository": {
