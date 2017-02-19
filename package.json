@@ -1,0 +1,22 @@
+{
+  "name": "bitcoin-live-transactions",
+  "version": "0.0.1",
+  "description": "Get all bitcoin transactions real time over socket.io from insight servers online",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "github.com/guerrerocarlos/bitcoin-live-transactions"
+  },
+  "keywords": [
+    "bitcoin",
+    "live",
+    "transactions"
+  ],
+  "author": "Carlos Guerrero <guerrerocarlos@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "debug": "^2.6.1",
+    "request": "^2.79.0",
+    "socket.io-client": "^1.7.3"
+  }
+}
