@@ -36,8 +36,11 @@ Will output:
 
 > balance: {
   "address": "1CZGSZPGsyeeLYyoXdmJtanEmaKKpwYM7g",
-  "amount": 5670.801,
-  "curr": "bits(uBTC)"
+  "in": 5670.801,
+  "out": 0,
+  "curr": "bits(uBTC)",
+  "balance": 5670.801,
+  "txs": 2
 }
 
 To get all the detailed information about an address, use **bitcoin.getTxs** instead of **bitcoin.getBalance**

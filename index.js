@@ -32,25 +32,38 @@ module.exports = function() {
     blockdebug('Getting txs for address', address, 'url:', self.api_url + 'txs/?address=' + address)
     return new Promise(function(Success, Reject) {
       result.address = address
-      result.amount = 0
+      result.in = 0
+      result.out = 0
       result.curr = "bits(uBTC)"
       request(self.api_url + 'txs/?address=' + address, function(error, response, body) {
         if (!error && response.statusCode == 200) {
           blockdebug('success :)')
 
           var transaction_json = JSON.parse(body)
-          console.log('transaction_json')
+            // console.log('transaction_json')
           transaction_json.txs.forEach(function(each_tx) {
             each_tx.vout.forEach(function(each_vout) {
               each_vout.scriptPubKey.addresses.forEach(function(outaddress) {
-                console.log('checking', outaddress)
+                // console.log('checking', outaddress)
                 if (outaddress === address) {
-                  console.log('adding!', each_vout.value)
-                  result.amount = result.amount + each_vout.value * 1000000
+                  // console.log('adding!', each_vout.value)
+                  result.in = result.in + each_vout.value * 1000000
                 }
               })
             })
+            each_tx.vin.forEach(function(each_vin) {
+
+              // each_vin.scriptPubKey.addresses.forEach(function(outaddress) {
+              // console.log('checking', outaddress)
+              if (each_vin.addr === address) {
+                // console.log('adding!', each_vout.value)
+                result.out = result.out + each_vin.value * 1000000
+              }
+              // })
+
+            })
           })
+          result.balance = result.in - result.out
           result.txs = transaction_json.txs.length
           Success({ txs: JSON.parse(body), balance: result })
             // Success({ result: result })
