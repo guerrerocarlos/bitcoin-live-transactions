@@ -56,7 +56,7 @@ Live stream
 
 To Listen to live transaction events on the Bitcoin P2P network for a given address, the event is called as the address itself:
 ```javascript
-bitcoin.events.on('1K2xWPtGsvg5Sa2X7URZ5VfU8xS62McbXz',function(tx){
+bitcoin.events.on('138WJKb1mXbkRGNpyMVEZ9EsoXjMEvJfT4',function(tx){
   console.log('Transaction detected!', tx);
 })
 ```
