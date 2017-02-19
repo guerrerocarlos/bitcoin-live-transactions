@@ -74,7 +74,7 @@ If you want to see **all** transactions happening live, use the **payment** even
 
 
 ```javascript
-bitcoin.events.on('payment',function(tx){
+bitcoin.events.on('tx',function(tx){
   console.log('Transaction detected!', tx);
 })
 ```
