@@ -51,6 +51,7 @@ module.exports = function() {
               })
             })
           })
+          result.txs = transaction_json.txs.length
           Success({ txs: JSON.parse(body), balance: result })
             // Success({ result: result })
         } else {
