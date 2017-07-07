@@ -94,3 +94,13 @@ Will trigger the event in real time if a payment is done to that address:
   isRBF: false }
 ...
 ```
+
+Testnet
+--
+
+To use test-net add *{testnet:true}* when instantiating the module, as follows:
+
+```javascript
+var BLT = require("bitcoin-live-transactions")
+var bitcoin = new BLT({testnet: true})
+```
