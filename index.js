@@ -7,11 +7,18 @@ const request = require('request')
 
 const EventEmitter = require('events').EventEmitter;
 
-module.exports = function() {
-  this.insight_servers = ["https://insight.bitpay.com/", "https://www.localbitcoinschain.com/", "https://search.bitaccess.co/"]
-  this.insight_apis_servers = ["https://insight.bitpay.com/api/", "https://www.localbitcoinschain.com/api/", "https://search.bitaccess.co/insight-api/"]
+module.exports = function(config) {
+  if(config === undefined){
+    this.insight_servers = ["https://insight.bitpay.com/", "https://www.localbitcoinschain.com/", "https://search.bitaccess.co/"]
+    this.insight_apis_servers = ["https://insight.bitpay.com/api/", "https://www.localbitcoinschain.com/api/", "https://search.bitaccess.co/insight-api/"]
+  } else {
+    if(config.testnet === true){
+      this.insight_servers = ["https://test-insight.bitpay.com/"]
+      this.insight_apis_servers = ["https://test-insight.bitpay.com/api/"]
+    }
+  }
   this.connected = false
-  self = this
+  var self = this
   this.events = new EventEmitter()
   this.getTxs = function(address) {
     return new Promise(function(Success, Reject) {
