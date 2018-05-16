@@ -110,6 +110,10 @@ module.exports = function(config) {
             })
             txdebug("New transaction received: " + JSON.stringify(data))
           })
+          self.socket.on('block', function(data) {
+            self.events.emit('block', data)
+            blockdebug("New block received: " + JSON.stringify(data))
+          })
           self.socket.on('event', function(data) {
             debug('event', data)
           });
