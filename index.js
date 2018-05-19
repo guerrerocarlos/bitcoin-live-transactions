@@ -100,6 +100,7 @@ module.exports = function(config) {
             Success()
             self.connected = true
             self.socket.emit('subscribe', 'inv')
+            // inv room is where the good blockchain stuff happens https://github.com/bitpay/insight-api#web-socket-api
             self.events.emit('connected')
           });
           self.socket.on('tx', function(data) {
