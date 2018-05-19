@@ -104,3 +104,9 @@ To use test-net add *{testnet:true}* when instantiating the module, as follows:
 var BLT = require("bitcoin-live-transactions")
 var bitcoin = new BLT({testnet: true})
 ```
+
+Firehose Example
+--
+There is a demonstration of live Bitcoin network events in `examples/firehose.js`. It connects to the Bitcoin network (via Bitpay), then `console.log`s every incoming transaction, as well as each newly mined block.
+
+You can run it directly (`node run examples/firehose.js`), or run the  `example` script from the package root (`npm run example`).
